@@ -19,9 +19,9 @@ public class ChatFormatter implements Listener {
     private void onChat(AsyncChatEvent event) {
         event.renderer(
                 ChatRenderer.viewerUnaware((source, sourceDisplayName, message) -> {
-                    return Component.text(source.getName(), NamedTextColor.GRAY)
+                    return Component.text(source.getName(), NamedTextColor.DARK_GRAY)
                             .append(Component.text(": ", NamedTextColor.WHITE))
-                            .append(message);
+                            .append(message.color(NamedTextColor.WHITE));
                 })
         );
     }
