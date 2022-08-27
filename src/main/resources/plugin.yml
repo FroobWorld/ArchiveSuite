@@ -1,0 +1,4 @@
+name: ArchiveSuite
+version: ${version}
+main: com.froobworld.archivesuite.ArchiveSuite
+api-version: 1.14
