@@ -6,6 +6,7 @@ import com.froobworld.archivesuite.command.commands.*;
 import com.froobworld.archivesuite.config.ArchiveSuiteConfig;
 import com.froobworld.archivesuite.gamemode.GamemodeManager;
 import com.froobworld.archivesuite.map.MapManager;
+import com.froobworld.archivesuite.motd.MotdManager;
 import com.froobworld.archivesuite.teleport.BackManager;
 import com.froobworld.archivesuite.teleport.PlayerTeleporter;
 import com.froobworld.archivesuite.teleport.home.HomeManager;
@@ -56,6 +57,7 @@ public class ArchiveSuite extends JavaPlugin {
         new PortalManager(this);
         teleportRequestHandler = new TeleportRequestHandler(this);
         new ChatFormatter(this);
+        new MotdManager(this);
 
         List.of(
                 new MapCommand(this),

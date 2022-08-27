@@ -31,4 +31,7 @@ public class ArchiveSuiteConfig extends NabConfiguration {
     @EntryMap(key = "map-blurb", defaultKey = "default")
     public final ConfigEntryMap<String, List<String>> mapBlurb = new ConfigEntryMap<>(Function.identity(), ConfigEntries::stringListEntry, true);
 
+    @Entry(key = "motd")
+    public final ConfigEntry<List<String>> motd = ConfigEntries.stringListEntry();
+
 }

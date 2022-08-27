@@ -4,3 +4,7 @@ enabled-maps: []
 
 map-blurb:
   default: []
+
+motd:
+  - "Welcome to the FroobWorld archive server."
+  - "Use <red>/maps</red> for a list of maps and <red>/help</red> for a list of commands."
