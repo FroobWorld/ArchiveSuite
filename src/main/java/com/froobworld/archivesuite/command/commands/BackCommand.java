@@ -33,6 +33,7 @@ public class BackCommand extends NabCommand {
             );
             return;
         }
+        player.sendMessage(Component.text("Preparing to teleport...", NamedTextColor.YELLOW));
         archiveSuite.getPlayerTeleporter().teleportAsync(player, backLocation).thenAccept(location -> {
             player.sendMessage(
                     Component.text("Teleported to your previous location.").color(NamedTextColor.YELLOW)

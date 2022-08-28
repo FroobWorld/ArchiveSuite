@@ -31,7 +31,7 @@ public class SpawnCommand extends NabCommand {
         player.sendMessage(Component.text("Preparing to teleport...", NamedTextColor.YELLOW));
         archiveSuite.getPlayerTeleporter().teleportAsync(player, mapSpawnManager.getSpawnLocation()).thenAccept(v -> {
             player.sendMessage(
-                    Component.text("Teleport to spawn.").color(NamedTextColor.YELLOW)
+                    Component.text("Teleported to spawn.").color(NamedTextColor.YELLOW)
             );
         });
     }
