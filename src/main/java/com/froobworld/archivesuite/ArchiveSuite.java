@@ -11,6 +11,7 @@ import com.froobworld.archivesuite.teleport.BackManager;
 import com.froobworld.archivesuite.teleport.PlayerTeleporter;
 import com.froobworld.archivesuite.teleport.home.HomeManager;
 import com.froobworld.archivesuite.teleport.portal.PortalManager;
+import com.froobworld.archivesuite.teleport.random.RandomTeleportManager;
 import com.froobworld.archivesuite.teleport.request.TeleportRequestHandler;
 import com.froobworld.archivesuite.teleport.spawn.SpawnManager;
 import com.froobworld.archivesuite.teleport.warp.WarpManager;
@@ -29,6 +30,7 @@ public class ArchiveSuite extends JavaPlugin {
     private WarpManager warpManager;
     private SpawnManager spawnManager;
     private TeleportRequestHandler teleportRequestHandler;
+    private RandomTeleportManager randomTeleportManager;
 
     @Override
     public void onEnable() {
@@ -58,6 +60,7 @@ public class ArchiveSuite extends JavaPlugin {
         teleportRequestHandler = new TeleportRequestHandler(this);
         new ChatFormatter(this);
         new MotdManager(this);
+        randomTeleportManager = new RandomTeleportManager(this);
 
         List.of(
                 new MapCommand(this),
@@ -74,7 +77,8 @@ public class ArchiveSuite extends JavaPlugin {
                 new TeleportRequestCommand(this),
                 new TeleportHereRequestCommand(this),
                 new TeleportAcceptCommand(this),
-                new TeleportDenyCommand(this)
+                new TeleportDenyCommand(this),
+                new RandomTeleportCommand(this)
         ).forEach(nabCommandManager::registerCommand);
     }
 
@@ -113,5 +117,9 @@ public class ArchiveSuite extends JavaPlugin {
 
     public TeleportRequestHandler getTeleportRequestHandler() {
         return teleportRequestHandler;
+    }
+
+    public RandomTeleportManager getRandomTeleportManager() {
+        return randomTeleportManager;
     }
 }

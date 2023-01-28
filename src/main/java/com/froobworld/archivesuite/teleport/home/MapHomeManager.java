@@ -8,6 +8,7 @@ import com.google.common.collect.HashBiMap;
 import org.bukkit.entity.Player;
 
 import java.io.File;
+import java.util.Set;
 import java.util.UUID;
 import java.util.regex.Pattern;
 
@@ -47,6 +48,10 @@ public class MapHomeManager {
         Home home = new Home(name, player.getLocation());
         getHomes(player).addHome(home);
         return home;
+    }
+
+    public Set<Homes> getAllHomes() {
+        return homesMap.values();
     }
 
     public void deleteHome(Player player, Home home) {
