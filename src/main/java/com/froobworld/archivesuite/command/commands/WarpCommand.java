@@ -40,7 +40,7 @@ public class WarpCommand extends NabCommand {
     public Command.Builder<CommandSender> populateBuilder(Command.Builder<CommandSender> builder) {
         return builder
                 .argument(new WarpArgument<>(
-                        false,
+                        true,
                         "warp",
                         archiveSuite.getWarpManager(),
                         archiveSuite.getMapManager(),
