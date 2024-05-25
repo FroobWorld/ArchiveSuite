@@ -58,7 +58,7 @@ public class ArchiveSuite extends JavaPlugin {
         spawnManager = new SpawnManager(this);
         new PortalManager(this);
         teleportRequestHandler = new TeleportRequestHandler(this);
-        new ChatFormatter(this);
+        //new ChatFormatter(this);
         new MotdManager(this);
         randomTeleportManager = new RandomTeleportManager(this);
 
